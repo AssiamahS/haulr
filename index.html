@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haulr — vetted junk removal, movers & cleaners</title>
+  <meta name="description" content="Book junk removal, movers and cleaners that are actually vetted. License, insurance and background checks verified. Reviews only from real booked jobs. Upfront prices." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a href="#" class="logo">haul<span>r</span></a>
+    <nav>
+      <a href="#how">How we vet</a>
+      <a href="#book">Book</a>
+      <a href="#pros">For pros</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Junk removal · Moving · Cleaning</p>
+      <h1>Stop clicking the first ad.<br />Book a crew that's <em>actually vetted.</em></h1>
+      <p class="sub">Every pro on Haulr has a verified license, proof of insurance and a background-checked crew. Reviews only come from jobs booked here. You see the price before anyone shows up.</p>
+    </div>
+
+    <form id="search" class="search card" autocomplete="off">
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab active" data-service="junk">Junk removal</button>
+        <button type="button" class="tab" data-service="moving">Moving</button>
+        <button type="button" class="tab" data-service="cleaning">Cleaning</button>
+      </div>
+      <label>ZIP code
+        <input id="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="07102" required />
+      </label>
+      <label><span id="size-label">How much stuff?</span>
+        <input id="size" type="range" min="1" max="5" value="2" />
+        <span id="size-desc" class="hint"></span>
+      </label>
+      <label>When
+        <input id="date" type="date" required />
+      </label>
+      <div class="estimate">Typical price: <strong id="estimate">—</strong></div>
+      <button class="btn primary" type="submit">Find vetted pros</button>
+    </form>
+  </section>
+
+  <section id="how" class="how">
+    <h2>The Haulr Trust Score</h2>
+    <p class="sub center">Anyone can buy a Google ad. Getting on Haulr takes six checks, and we re-run them every 90 days.</p>
+    <div class="grid six" id="checks"></div>
+  </section>
+
+  <section id="book" class="results">
+    <div class="results-head">
+      <h2 id="results-title">Pros near you</h2>
+      <div class="sort">
+        <label>Sort
+          <select id="sort">
+            <option value="trust">Trust Score</option>
+            <option value="price">Lowest price</option>
+            <option value="eta">Soonest arrival</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="only-verified" checked /> Fully verified only</label>
+      </div>
+    </div>
+    <div id="list" class="list"></div>
+    <div id="compare-bar" class="compare-bar hidden">
+      <span id="compare-count"></span>
+      <button class="btn" id="compare-btn">Compare side by side</button>
+    </div>
+  </section>
+
+  <section id="pros" class="pros card">
+    <div>
+      <h2>Run an honest crew?</h2>
+      <p>Stop paying $80 a lead to be one of six companies that get the same call. On Haulr you get booked jobs with the price already agreed. Pass the checks and you're in front of customers who already decided to hire.</p>
+      <ul class="ticks">
+        <li>No lead fees. 12% only on completed jobs.</li>
+        <li>Next-day payouts.</li>
+        <li>Your Trust Score is portable. Put the badge on your own site.</li>
+      </ul>
+    </div>
+    <form id="pro-form" class="pro-form">
+      <input placeholder="Business name" required />
+      <input placeholder="State license # / USDOT #" required />
+      <input type="email" placeholder="Email" required />
+      <button class="btn primary" type="submit">Apply to join</button>
+      <p class="hint" id="pro-msg"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Haulr. Demo build: providers shown are sample data.</p>
+  </footer>
+
+  <dialog id="modal">
+    <div id="modal-body"></div>
+    <button class="btn close" id="modal-close" aria-label="Close">×</button>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
